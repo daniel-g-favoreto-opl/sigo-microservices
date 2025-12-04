@@ -1,0 +1,50 @@
+version: "3.8"
+
+services:
+  # Primeira imagem - Consumer Kafka
+  kafka-consumer:
+    image: kafka_nossis_consumer:latest
+    container_name: ttk-kafka-consumer
+    environment:
+      - KAFKA_URL=kafka:29092 # Porta interna para containers
+      - TOPIC_NAME=TTK #topico do kafka
+      - GROUP_ID=ttk-consumer-group
+      - FOLDER_PATH=/app/data/ttks # pasta compartilhada
+      - DAYS_TO_KEEP=5.0 # mantem arquivos de até 5 dias
+      - CHECK_INTERVAL=3600.0 # limpeza de 1 em 1 hora
+    volumes:
+      - ./ttks:/app/data/ttks # Pasta local compartilhada
+    networks:
+      - app-network
+      - kafka-sigo-ms_default # Network do Kafka externo
+    restart: unless-stopped
+
+  # Segunda imagem - API com OAuth
+  csv-api:
+    image: ttks_ms:latest
+    container_name: ttk-csv-api
+    environment:
+      - FOLDER_PATH=/app/data/ttks #pasta compartilhada
+      - CLIENT_ID=sigo-admin #id do cliente
+      - CLIENT_SECRET=j{2P|j<Mzl0qoE==>Z40 #secret do cliente
+      - EXPIRES_IN=86400 # 24 horas em segundos(tempo de expiracao do token)
+    volumes:
+      - ./ttks:/app/data/ttks # Mesma pasta compartilhada
+    ports:
+      - "9090:9090" # Serviço principal (consulta CSVs)
+      - "9091:9091" # Serviço OAuth
+    networks:
+      - app-network
+    restart: unless-stopped
+    depends_on:
+      - kafka-consumer # Garante que o consumer suba primeiro
+
+networks:
+  app-network:
+    driver: bridge
+  kafka-sigo-ms_default:
+    external: true # Network externa do Kafka
+
+volumes:
+  ttks-data: # Volume nomeado opcional (se preferir ao bind mount)
+    driver: local
