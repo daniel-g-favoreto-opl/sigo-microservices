@@ -87,7 +87,7 @@
 };
 ```
 - kafka-nossis-consumer: A consumer that will hear all payloads coming from our producer and save those payloads as csv files inside a local folder.
-- ttks_ms: An api gateway for listing our csvs and download each one individually. It is protected by oauth, using a client_id and client_secret, that can be defined using system variables.
+- ttks_ms: An api gateway for listing our csvs and download each one individually. It is protected by oauth, using a client_id and client_secret, that can be defined using system variables. Inside this, you will also find a swagger and a postman-collection for helping with documentation.
 
 For launching ttks_ms and kafka-nossis-consumer simultaneously, there is a single docker-compose.yml file in the root of this repository. You can check which variables can be set before launching those containers.
 
@@ -113,6 +113,7 @@ This contains the apache-airflow project inside csv-downloader folder. You can l
 - 
 - download_csvs_dag.py: 
 - postgre_insert_csvs_dag.py
+
 
 
 
