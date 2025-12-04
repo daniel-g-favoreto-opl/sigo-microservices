@@ -9,7 +9,7 @@
 - open-side
 
 ### 1) client-side folder:
-- kafka-docker-simulator : This folder contains a single docker-compose.yml file for launching a kafka simulator within a docker container. Use it to simulate a kafka in Sigo environmnets
+- kafka-docker-simulator : This folder contains a single docker-compose.yml file for launching a kafka simulator within a docker container. Use it to simulate a kafka outside of Sigo environmnets
 - kafka-nossis-producer : This folder contains a ballerina project that will connect to our kafka simulator and emit Sigo Payloads containing TTK's. Here is an example of payload:
 
 ```json
@@ -113,6 +113,7 @@ This contains the apache-airflow project inside csv-downloader folder. You can l
 - 
 - download_csvs_dag.py: 
 - postgre_insert_csvs_dag.py
+
 
 
 
