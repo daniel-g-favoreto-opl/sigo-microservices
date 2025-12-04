@@ -1,0 +1,36 @@
+{"timestamp":"2025-11-28T18:03:55.556933Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-28T18:03:55.557550Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/download_csvs_dag.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-28T18:03:55.573835Z","level":"warning","event":"The `airflow.decorators.dag` attribute is deprecated. Please use `'airflow.sdk.dag'`.","category":"DeprecatedImportWarning","filename":"/opt/airflow/dags/download_csvs_dag.py","lineno":1,"logger":"py.warnings"}
+{"timestamp":"2025-11-28T18:03:55.573902Z","level":"warning","event":"The `airflow.decorators.task` attribute is deprecated. Please use `'airflow.sdk.task'`.","category":"DeprecatedImportWarning","filename":"/opt/airflow/dags/download_csvs_dag.py","lineno":1,"logger":"py.warnings"}
+{"timestamp":"2025-11-28T18:03:55.596172Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.596361Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.596532Z","level":"info","event":"Current task name:verificar_e_baixar_csvs","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.596635Z","level":"info","event":"Dag name:download_csvs_fibrasil","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.597873Z","level":"info","event":"⬇️ Iniciando download de CSVs para fibrasil...","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.603342Z","level":"info","event":"📁 Pasta de destino: /opt/airflow/data/csvs/fibrasil","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.603598Z","level":"info","event":"📥 Baixando 1764270962000.csv...","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.671391Z","level":"info","event":"✅ Arquivo 1764270962000.csv baixado com sucesso!","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.671625Z","level":"info","event":"📥 Baixando 1764270970000.csv...","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.707400Z","level":"info","event":"✅ Arquivo 1764270970000.csv baixado com sucesso!","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.707702Z","level":"info","event":"📥 Baixando 1764270964000.csv...","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.746204Z","level":"info","event":"✅ Arquivo 1764270964000.csv baixado com sucesso!","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.751274Z","level":"info","event":"📥 Baixando 1764270961000.csv...","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.775529Z","level":"info","event":"✅ Arquivo 1764270961000.csv baixado com sucesso!","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.776746Z","level":"info","event":"📥 Baixando 1764270967000.csv...","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.809109Z","level":"info","event":"✅ Arquivo 1764270967000.csv baixado com sucesso!","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.810108Z","level":"info","event":"📥 Baixando 1764270960000.csv...","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.835203Z","level":"info","event":"✅ Arquivo 1764270960000.csv baixado com sucesso!","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.835825Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.835957Z","level":"info","event":"============================================================","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.836067Z","level":"info","event":"📊 RELATÓRIO DE DOWNLOAD - Cliente: fibrasil","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.836128Z","level":"info","event":"============================================================","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.836195Z","level":"info","event":"✅ Arquivos baixados: 6","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.836291Z","level":"info","event":"⏭️ Arquivos pulados (já existiam): 0","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.836342Z","level":"info","event":"❌ Arquivos com erro: 0","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.836417Z","level":"info","event":"📁 Pasta de destino: /opt/airflow/data/csvs/fibrasil","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.836718Z","level":"info","event":"============================================================","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.834564Z","level":"info","event":"Done. Returned value was: {'cliente': 'fibrasil', 'baixados': ['1764270962000', '1764270970000', '1764270964000', '1764270961000', '1764270967000', '1764270960000'], 'pulados': [], 'erros': [], 'total_processados': 6}","logger":"airflow.task.operators.airflow.providers.standard.decorators.python._PythonDecoratedOperator","filename":"python.py","lineno":215}
+{"timestamp":"2025-11-28T18:03:55.835209Z","level":"info","event":"Pushing xcom","ti":"RuntimeTaskInstance(id=UUID('019acba2-b3ee-76ea-9929-c207889a513f'), task_id='verificar_e_baixar_csvs', dag_id='download_csvs_fibrasil', run_id='manual__2025-11-28T18:00:53+00:00', try_number=1, dag_version_id=UUID('019acafd-6015-76b9-b0fd-e16e8af9869a'), map_index=-1, hostname='a20f9d5b7e4f', context_carrier={}, task=<Task(_PythonDecoratedOperator): verificar_e_baixar_csvs>, bundle_instance=LocalDagBundle(name=dags-folder), max_tries=2, start_date=datetime.datetime(2025, 11, 28, 18, 3, 55, 155518, tzinfo=datetime.timezone.utc), end_date=None, state=<TaskInstanceState.RUNNING: 'running'>, is_mapped=False, rendered_map_index=None)","logger":"task","filename":"task_runner.py","lineno":1360}
+{"timestamp":"2025-11-28T18:03:55.866318Z","level":"info","event":"Task instance in success state","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.866510Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","logger":"task.stdout"}
+{"timestamp":"2025-11-28T18:03:55.866736Z","level":"info","event":"Task operator:<Task(_PythonDecoratedOperator): verificar_e_baixar_csvs>","logger":"task.stdout"}

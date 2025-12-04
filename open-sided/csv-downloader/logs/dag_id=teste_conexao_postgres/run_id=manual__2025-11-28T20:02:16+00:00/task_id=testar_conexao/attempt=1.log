@@ -1,0 +1,55 @@
+{"timestamp":"2025-11-28T20:02:18.868382Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-28T20:02:18.870243Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/postgres_test_dag.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-28T20:02:18.945092Z","level":"warning","event":"The `airflow.decorators.dag` attribute is deprecated. Please use `'airflow.sdk.dag'`.","category":"DeprecatedImportWarning","filename":"/opt/airflow/dags/postgres_test_dag.py","lineno":1,"logger":"py.warnings"}
+{"timestamp":"2025-11-28T20:02:18.945334Z","level":"warning","event":"The `airflow.decorators.task` attribute is deprecated. Please use `'airflow.sdk.task'`.","category":"DeprecatedImportWarning","filename":"/opt/airflow/dags/postgres_test_dag.py","lineno":1,"logger":"py.warnings"}
+{"timestamp":"2025-11-28T20:02:18.958454Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:18.959454Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:18.959559Z","level":"info","event":"Current task name:testar_conexao","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:18.959625Z","level":"info","event":"Dag name:teste_conexao_postgres","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:18.959716Z","level":"info","event":"🔌 Testando conexão com PostgreSQL...","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:18.959767Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:18.959828Z","level":"info","event":"📊 Teste 1: Verificar versão do PostgreSQL","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:18.999312Z","level":"info","event":"Running statement: SELECT version();, parameters: None","logger":"airflow.task.hooks.airflow.providers.***.hooks.***.PostgresHook","filename":"sql.py","lineno":810}
+{"timestamp":"2025-11-28T20:02:19.015756Z","level":"info","event":"Rows affected: 1","logger":"airflow.task.hooks.airflow.providers.***.hooks.***.PostgresHook","filename":"sql.py","lineno":822}
+{"timestamp":"2025-11-28T20:02:19.017447Z","level":"info","event":"✅ Versão: PostgreSQL 15.12 (Homebrew) on aarch64-apple-darwin24.2.0, compiled by Apple clang version 16.0.0 (clang-1600.0.26.6), 64-bit","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:19.018893Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:19.020238Z","level":"info","event":"📊 Teste 2: Listar databases","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:19.031686Z","level":"info","event":"Running statement: SELECT datname FROM pg_database WHERE datistemplate = false;, parameters: None","logger":"airflow.task.hooks.airflow.providers.***.hooks.***.PostgresHook","filename":"sql.py","lineno":810}
+{"timestamp":"2025-11-28T20:02:19.041023Z","level":"info","event":"Rows affected: 2","logger":"airflow.task.hooks.airflow.providers.***.hooks.***.PostgresHook","filename":"sql.py","lineno":822}
+{"timestamp":"2025-11-28T20:02:19.042086Z","level":"info","event":"✅ Databases disponíveis:","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:19.042386Z","level":"info","event":"   - ***","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:19.042528Z","level":"info","event":"   - csvs","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:19.042940Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:19.043103Z","level":"info","event":"📊 Teste 3: Listar tabelas","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:19.053502Z","level":"info","event":"Running statement: SELECT tablename FROM pg_tables WHERE schemaname='public';, parameters: None","logger":"airflow.task.hooks.airflow.providers.***.hooks.***.PostgresHook","filename":"sql.py","lineno":810}
+{"timestamp":"2025-11-28T20:02:19.072135Z","level":"info","event":"Rows affected: 0","logger":"airflow.task.hooks.airflow.providers.***.hooks.***.PostgresHook","filename":"sql.py","lineno":822}
+{"timestamp":"2025-11-28T20:02:19.073253Z","level":"info","event":"ℹ️ Nenhuma tabela encontrada no schema 'public'","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:19.074025Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:19.074286Z","level":"info","event":"📊 Teste 4: Data e hora do servidor","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:19.079314Z","level":"info","event":"Running statement: SELECT NOW();, parameters: None","logger":"airflow.task.hooks.airflow.providers.***.hooks.***.PostgresHook","filename":"sql.py","lineno":810}
+{"timestamp":"2025-11-28T20:02:19.080809Z","level":"info","event":"Rows affected: 1","logger":"airflow.task.hooks.airflow.providers.***.hooks.***.PostgresHook","filename":"sql.py","lineno":822}
+{"timestamp":"2025-11-28T20:02:19.081165Z","level":"info","event":"✅ Data/Hora do servidor: 2025-11-28 17:02:19.079785-03:00","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:19.081280Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:19.081665Z","level":"info","event":"📊 Teste 5: Criar tabela de teste","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:19.085943Z","level":"info","event":"Running statement: \n                CREATE TABLE IF NOT EXISTS teste_airflow (\n                    id SERIAL PRIMARY KEY,\n                    mensagem TEXT,\n                    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n                );\n            , parameters: None","logger":"airflow.task.hooks.airflow.providers.***.hooks.***.PostgresHook","filename":"sql.py","lineno":810}
+{"timestamp":"2025-11-28T20:02:19.112638Z","level":"info","event":"✅ Tabela 'teste_airflow' criada com sucesso!","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:19.112854Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:19.113107Z","level":"info","event":"📊 Teste 6: Inserir dados","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:19.117161Z","level":"info","event":"Running statement: \n                INSERT INTO teste_airflow (mensagem) \n                VALUES ('Conexão funcionando perfeitamente!');\n            , parameters: None","logger":"airflow.task.hooks.airflow.providers.***.hooks.***.PostgresHook","filename":"sql.py","lineno":810}
+{"timestamp":"2025-11-28T20:02:19.118497Z","level":"info","event":"Rows affected: 1","logger":"airflow.task.hooks.airflow.providers.***.hooks.***.PostgresHook","filename":"sql.py","lineno":822}
+{"timestamp":"2025-11-28T20:02:19.118894Z","level":"info","event":"✅ Dados inseridos com sucesso!","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:19.118955Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:19.119002Z","level":"info","event":"📊 Teste 7: Ler dados inseridos","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:19.122814Z","level":"info","event":"Running statement: SELECT * FROM teste_airflow ORDER BY id DESC LIMIT 5;, parameters: None","logger":"airflow.task.hooks.airflow.providers.***.hooks.***.PostgresHook","filename":"sql.py","lineno":810}
+{"timestamp":"2025-11-28T20:02:19.123926Z","level":"info","event":"Rows affected: 1","logger":"airflow.task.hooks.airflow.providers.***.hooks.***.PostgresHook","filename":"sql.py","lineno":822}
+{"timestamp":"2025-11-28T20:02:19.124256Z","level":"info","event":"Done. Returned value was: ✅ Conexão OK!","logger":"airflow.task.operators.airflow.providers.standard.decorators.python._PythonDecoratedOperator","filename":"python.py","lineno":215}
+{"timestamp":"2025-11-28T20:02:19.124804Z","level":"info","event":"✅ Últimos registros:","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:19.124904Z","level":"info","event":"   ID: 1, Mensagem: Conexão funcionando perfeitamente!, Data: 2025-11-28 17:02:19.117582","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:19.124969Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:19.125053Z","level":"info","event":"============================================================","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:19.125121Z","level":"info","event":"🎉 TODOS OS TESTES PASSARAM COM SUCESSO!","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:19.125182Z","level":"info","event":"============================================================","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:19.124537Z","level":"info","event":"Pushing xcom","ti":"RuntimeTaskInstance(id=UUID('019acc0f-2cfc-7039-a1be-f8d87c676cc6'), task_id='testar_conexao', dag_id='teste_conexao_***', run_id='manual__2025-11-28T20:02:16+00:00', try_number=1, dag_version_id=UUID('019acbfc-3437-7ec9-9b14-9da98ab4c174'), map_index=-1, hostname='a20f9d5b7e4f', context_carrier={}, task=<Task(_PythonDecoratedOperator): testar_conexao>, bundle_instance=LocalDagBundle(name=dags-folder), max_tries=0, start_date=datetime.datetime(2025, 11, 28, 20, 2, 18, 447788, tzinfo=datetime.timezone.utc), end_date=None, state=<TaskInstanceState.RUNNING: 'running'>, is_mapped=False, rendered_map_index=None)","logger":"task","filename":"task_runner.py","lineno":1360}
+{"timestamp":"2025-11-28T20:02:19.149658Z","level":"info","event":"Task instance in success state","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:19.149831Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","logger":"task.stdout"}
+{"timestamp":"2025-11-28T20:02:19.149931Z","level":"info","event":"Task operator:<Task(_PythonDecoratedOperator): testar_conexao>","logger":"task.stdout"}

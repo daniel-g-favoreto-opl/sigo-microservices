@@ -1,0 +1,28 @@
+{"timestamp":"2025-11-28T12:57:38.177060Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-28T12:57:38.178951Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/download_csvs_dag.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-28T12:57:38.198470Z","level":"warning","event":"The `airflow.decorators.dag` attribute is deprecated. Please use `'airflow.sdk.dag'`.","category":"DeprecatedImportWarning","filename":"/opt/airflow/dags/download_csvs_dag.py","lineno":1,"logger":"py.warnings"}
+{"timestamp":"2025-11-28T12:57:38.198601Z","level":"warning","event":"The `airflow.decorators.task` attribute is deprecated. Please use `'airflow.sdk.task'`.","category":"DeprecatedImportWarning","filename":"/opt/airflow/dags/download_csvs_dag.py","lineno":1,"logger":"py.warnings"}
+{"timestamp":"2025-11-28T12:57:38.235040Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2025-11-28T12:57:38.235366Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2025-11-28T12:57:38.235945Z","level":"info","event":"Current task name:verificar_e_baixar_csvs","logger":"task.stdout"}
+{"timestamp":"2025-11-28T12:57:38.236660Z","level":"info","event":"Dag name:download_csvs_com_oauth","logger":"task.stdout"}
+{"timestamp":"2025-11-28T12:57:38.237094Z","level":"info","event":"⬇️ Iniciando download de CSVs...","logger":"task.stdout"}
+{"timestamp":"2025-11-28T12:57:38.237902Z","level":"info","event":"⏭️ Arquivo 1764270962000.csv já existe. Pulando...","logger":"task.stdout"}
+{"timestamp":"2025-11-28T12:57:38.238119Z","level":"info","event":"⏭️ Arquivo 1764270970000.csv já existe. Pulando...","logger":"task.stdout"}
+{"timestamp":"2025-11-28T12:57:38.238392Z","level":"info","event":"⏭️ Arquivo 1764270964000.csv já existe. Pulando...","logger":"task.stdout"}
+{"timestamp":"2025-11-28T12:57:38.238649Z","level":"info","event":"⏭️ Arquivo 1764270961000.csv já existe. Pulando...","logger":"task.stdout"}
+{"timestamp":"2025-11-28T12:57:38.238797Z","level":"info","event":"⏭️ Arquivo 1764270967000.csv já existe. Pulando...","logger":"task.stdout"}
+{"timestamp":"2025-11-28T12:57:38.238937Z","level":"info","event":"⏭️ Arquivo 1764270960000.csv já existe. Pulando...","logger":"task.stdout"}
+{"timestamp":"2025-11-28T12:57:38.239103Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-28T12:57:38.239341Z","level":"info","event":"==================================================","logger":"task.stdout"}
+{"timestamp":"2025-11-28T12:57:38.239599Z","level":"info","event":"📊 RELATÓRIO DE DOWNLOAD","logger":"task.stdout"}
+{"timestamp":"2025-11-28T12:57:38.239775Z","level":"info","event":"==================================================","logger":"task.stdout"}
+{"timestamp":"2025-11-28T12:57:38.239938Z","level":"info","event":"✅ Arquivos baixados: 0","logger":"task.stdout"}
+{"timestamp":"2025-11-28T12:57:38.240105Z","level":"info","event":"⏭️ Arquivos pulados (já existiam): 6","logger":"task.stdout"}
+{"timestamp":"2025-11-28T12:57:38.240332Z","level":"info","event":"📁 Pasta de destino: /opt/airflow/data/csvs","logger":"task.stdout"}
+{"timestamp":"2025-11-28T12:57:38.240565Z","level":"info","event":"==================================================","logger":"task.stdout"}
+{"timestamp":"2025-11-28T12:57:38.237263Z","level":"info","event":"Done. Returned value was: {'baixados': [], 'pulados': ['1764270962000', '1764270970000', '1764270964000', '1764270961000', '1764270967000', '1764270960000'], 'total_processados': 6}","logger":"airflow.task.operators.airflow.providers.standard.decorators.python._PythonDecoratedOperator","filename":"python.py","lineno":215}
+{"timestamp":"2025-11-28T12:57:38.237474Z","level":"info","event":"Pushing xcom","ti":"RuntimeTaskInstance(id=UUID('019aca8a-567e-77a1-b09b-2d3a575a6f1c'), task_id='verificar_e_baixar_csvs', dag_id='download_csvs_com_oauth', run_id='manual__2025-11-28T12:57:33+00:00', try_number=1, dag_version_id=UUID('019aca80-71c4-79d1-8076-cc2fddc721f7'), map_index=-1, hostname='8f8141866416', context_carrier={}, task=<Task(_PythonDecoratedOperator): verificar_e_baixar_csvs>, bundle_instance=LocalDagBundle(name=dags-folder), max_tries=0, start_date=datetime.datetime(2025, 11, 28, 12, 57, 37, 856175, tzinfo=datetime.timezone.utc), end_date=None, state=<TaskInstanceState.RUNNING: 'running'>, is_mapped=False, rendered_map_index=None)","logger":"task","filename":"task_runner.py","lineno":1360}
+{"timestamp":"2025-11-28T12:57:38.511780Z","level":"info","event":"Task instance in success state","logger":"task.stdout"}
+{"timestamp":"2025-11-28T12:57:38.512231Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","logger":"task.stdout"}
+{"timestamp":"2025-11-28T12:57:38.512301Z","level":"info","event":"Task operator:<Task(_PythonDecoratedOperator): verificar_e_baixar_csvs>","logger":"task.stdout"}

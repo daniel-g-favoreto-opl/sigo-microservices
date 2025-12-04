@@ -1,0 +1,31 @@
+{"timestamp":"2025-11-29T04:16:58.712811Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-29T04:16:58.714004Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/postgre_insert_csvs_dag.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-29T04:16:58.793983Z","level":"warning","event":"The `airflow.decorators.dag` attribute is deprecated. Please use `'airflow.sdk.dag'`.","category":"DeprecatedImportWarning","filename":"/opt/airflow/dags/postgre_insert_csvs_dag.py","lineno":1,"logger":"py.warnings"}
+{"timestamp":"2025-11-29T04:16:58.794293Z","level":"warning","event":"The `airflow.decorators.task` attribute is deprecated. Please use `'airflow.sdk.task'`.","category":"DeprecatedImportWarning","filename":"/opt/airflow/dags/postgre_insert_csvs_dag.py","lineno":1,"logger":"py.warnings"}
+{"timestamp":"2025-11-29T04:16:58.814623Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2025-11-29T04:16:58.814899Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2025-11-29T04:16:58.815072Z","level":"info","event":"Current task name:relatorio_geral","logger":"task.stdout"}
+{"timestamp":"2025-11-29T04:16:58.815211Z","level":"info","event":"Dag name:processar_ttks_para_postgres","logger":"task.stdout"}
+{"timestamp":"2025-11-29T04:16:58.817733Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-29T04:16:58.817896Z","level":"info","event":"============================================================","logger":"task.stdout"}
+{"timestamp":"2025-11-29T04:16:58.818004Z","level":"info","event":"📊 RELATÓRIO GERAL DE PROCESSAMENTO","logger":"task.stdout"}
+{"timestamp":"2025-11-29T04:16:58.818090Z","level":"info","event":"============================================================","logger":"task.stdout"}
+{"timestamp":"2025-11-29T04:16:58.974853Z","level":"info","event":"🏢 Total de clientes processados: 1","logger":"task.stdout"}
+{"timestamp":"2025-11-29T04:16:58.975030Z","level":"info","event":"✅ Total de registros inseridos: 0","logger":"task.stdout"}
+{"timestamp":"2025-11-29T04:16:58.975303Z","level":"info","event":"🔄 Total de registros atualizados: 1000","logger":"task.stdout"}
+{"timestamp":"2025-11-29T04:16:58.975519Z","level":"info","event":"❌ Total de erros: 0","logger":"task.stdout"}
+{"timestamp":"2025-11-29T04:16:58.975768Z","level":"info","event":"============================================================","logger":"task.stdout"}
+{"timestamp":"2025-11-29T04:16:58.981891Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-29T04:16:58.982040Z","level":"info","event":"  Cliente: fibrasil","logger":"task.stdout"}
+{"timestamp":"2025-11-29T04:16:58.982114Z","level":"info","event":"    Inseridos: 0","logger":"task.stdout"}
+{"timestamp":"2025-11-29T04:16:58.982168Z","level":"info","event":"    Atualizados: 1000","logger":"task.stdout"}
+{"timestamp":"2025-11-29T04:16:58.982220Z","level":"info","event":"    Erros: 0","logger":"task.stdout"}
+{"timestamp":"2025-11-29T04:16:58.987519Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-29T04:16:58.987902Z","level":"info","event":"============================================================","logger":"task.stdout"}
+{"timestamp":"2025-11-29T04:16:58.988000Z","level":"info","event":"✅ PROCESSAMENTO CONCLUÍDO!","logger":"task.stdout"}
+{"timestamp":"2025-11-29T04:16:58.988067Z","level":"info","event":"============================================================","logger":"task.stdout"}
+{"timestamp":"2025-11-29T04:16:58.988147Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-29T04:16:58.988003Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.decorators.python._PythonDecoratedOperator","filename":"python.py","lineno":215}
+{"timestamp":"2025-11-29T04:16:59.002171Z","level":"info","event":"Task instance in success state","logger":"task.stdout"}
+{"timestamp":"2025-11-29T04:16:59.002461Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","logger":"task.stdout"}
+{"timestamp":"2025-11-29T04:16:59.003037Z","level":"info","event":"Task operator:<Task(_PythonDecoratedOperator): relatorio_geral>","logger":"task.stdout"}
