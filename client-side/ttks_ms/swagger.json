@@ -1,0 +1,99 @@
+openapi: 3.0.3
+info:
+  title: New Collection API
+  version: "1.0.0"
+
+servers:
+  - url: http://host.docker.internal:9091
+    description: OAuth Server
+  - url: "{{url}}"
+    description: API Server
+
+paths:
+  /oauth2/token:
+    post:
+      summary: Get OAuth2 Token
+      tags:
+        - Auth
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                client_id:
+                  type: string
+                  example: sigo-admin
+                client_secret:
+                  type: string
+                  example: "********"
+                grant_type:
+                  type: string
+                  example: client_credentials
+              required:
+                - client_id
+                - client_secret
+                - grant_type
+      responses:
+        "200":
+          description: Access token response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  access_token:
+                    type: string
+                  token_type:
+                    type: string
+                  expires_in:
+                    type: integer
+
+  /api/csvs:
+    get:
+      summary: List CSV files
+      tags:
+        - CSV
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+            example: "Bearer {{token}}"
+      responses:
+        "200":
+          description: List of CSV files
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+
+  /api/csv/{nome}:
+    get:
+      summary: Download a specific CSV file
+      tags:
+        - CSV
+      parameters:
+        - name: nome
+          in: path
+          required: true
+          schema:
+            type: string
+            example: "1764270962000"
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+            example: "Bearer {{token}}"
+      responses:
+        "200":
+          description: CSV content returned
+          content:
+            text/csv:
+              schema:
+                type: string

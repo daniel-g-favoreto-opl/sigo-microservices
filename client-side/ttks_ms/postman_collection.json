@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "b4f0861c-556a-4e41-ad22-deba4e39b760",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34573761"
+	},
+	"item": [
+		{
+			"name": "oauth2/token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "sigo-admin",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "j{2P|j<Mzl0qoE==>Z40",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://host.docker.internal:9091/oauth2/token",
+					"protocol": "http",
+					"host": [
+						"host",
+						"docker",
+						"internal"
+					],
+					"port": "9091",
+					"path": [
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/csvs",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 1540407b7f175754c22fa9a1462ac231ff592c1f45f44fb03aaefa2101a49f0d",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url\n}}/api/csvs",
+					"host": [
+						"{{url\n}}"
+					],
+					"path": [
+						"api",
+						"csvs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/csv/{{nome}}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer b868186752aa23fa1d284e5a207809d1929543f740eb2691cdb705a61b105992",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url\n}}/api/csv/1764270962000",
+					"host": [
+						"{{url\n}}"
+					],
+					"path": [
+						"api",
+						"csv",
+						"1764270962000"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
